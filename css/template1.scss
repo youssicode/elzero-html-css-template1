@@ -1,0 +1,202 @@
+// Variables
+ $black: black;
+ $gray-d: #333;
+ $gray-m: #aaa;
+ $gray-s: #EBECED;
+ $gray-l: #f6f6f6;
+ $main-color: #10CAB7;
+ $padding-xl: 3.5rem;
+ $padding-l: 1.25rem;
+ $padding-s: 0.8rem;
+//* Start Global Rules
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+    // max-width: 1200px; if using Media Queries
+    width: clamp(250px, 90%, 1200px);
+    margin: 0 auto;
+}
+// Sass Functions
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+//* End Global Rules
+header {
+    padding: $padding-l;
+    .container {
+        @include flex-center();
+        justify-content: space-between;
+        .logo {
+            height: 24px;
+            cursor: pointer;
+        }
+        nav {
+            position: relative;
+            
+            .burger {
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                span {
+                    width: 100%;
+                    height: 2px;
+                    background-color: $black;
+                    border-radius: 10px;
+                }
+                span:nth-child(2) {
+                    width: 60%;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    transition: width 500ms;
+                }
+            }
+            &:hover span:nth-child(2){
+                width: 100%;
+            }
+
+            .links-wrapper {
+                position: absolute;
+                display: none;
+                top: 115%;
+                right: 0;
+                li {
+                    width: 10rem;
+                    list-style: none;
+                    background-color:  $gray-l;
+                    padding: $padding-s;
+                    cursor: pointer;
+                    transition: all 500ms;
+                    a {
+                        color: $gray-d;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                    }
+                }
+                li:hover {
+                    // padding-left: $padding-l;
+                    padding-left: 1.25rem;
+                }
+                li:not(:last-child) {
+                    border-bottom: 1px solid  $gray-m;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border: 12px solid transparent;
+                    border-bottom-color:  $gray-l;
+                    top: -24px;
+                    right: 6px;
+                }
+            }
+            &:hover .links-wrapper {
+                display: block;
+            }
+        }
+    }
+    border-bottom: 2px solid $main-color;
+}
+section:nth-child(2n+1) { // section[1,3,5] 
+    background-color: $gray-l;
+}
+section {
+    padding: $padding-xl 0;
+}
+#landing {
+    width: 100%;
+    height: calc(100vh - 66px);
+    // background-color: $gray-l;
+    // background-image: url("../images/landing.jpg");
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    background: url("../images/landing.jpg") no-repeat center / cover ;
+    .container {
+        height: 100%;
+        @include flex-center();
+    }
+    .intro {
+        width: 23rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    h1.title {
+        font-size: 3rem;
+        color: $main-color;
+        margin-top: 0;
+        margin-bottom: .8rem;
+    }
+    p.we-are {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}
+#features {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
+        gap: $padding-l;
+        .feature {
+            text-align: center;
+            padding: $padding-s;
+            i {
+                color: $main-color;
+                font-size: 3rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+                text-transform: capitalize;
+                font-weight: 700;
+                margin-top: 2rem;
+            }
+            p.feat-Desc {
+                font-size: 1.1rem;
+                font-weight: 400;
+                color: $gray-d;
+                line-height: 1.8rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+//* Media Queries
+// if not using "clamp" propertie in .container
+// @media (max-width: 1200px) {
+//     .container {
+//         max-width: 970px;
+//     }
+// }
+// @media (max-width: 992px) {
+//     .container {
+//         max-width: 750px;
+//     }
+// }
+// @media (max-width: 768px) {
+// }
+@media (max-width: 576px) {
+    html {
+        font-size: 70%;
+    }
+    .container {
+        width: 100%;
+    }
+    header {
+        padding: $padding-s;
+    }
+    #landing {
+        height: calc(100vh - 43px);
+    }
+}
