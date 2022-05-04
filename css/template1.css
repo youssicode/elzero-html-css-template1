@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  width: clamp(250px, 90%, 1200px);
+  width: clamp(250px, 85%, 1200px);
   margin: 0 auto;
 }
 
@@ -96,6 +96,19 @@ section:nth-child(2n+1) {
 
 section {
   padding: 3.5rem 0;
+  text-align: center;
+}
+section h2 {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #EBECED;
+  margin-top: 0;
+  margin-bottom: -30px;
+}
+section p {
+  font-size: 1.25rem;
+  color: #aaa;
+  margin: 0;
 }
 
 #landing {
@@ -123,32 +136,69 @@ section {
 #landing p.we-are {
   font-size: 1.2rem;
   line-height: 1.8rem;
+  color: black;
 }
 
-#features .container {
+#services .container, #features .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
-  gap: 1.25rem;
+  gap: 3.5rem;
 }
-#features .container .feature {
+#services .container .card, #features .container .card {
   text-align: center;
   padding: 0.8rem;
 }
-#features .container .feature i {
+#services .container .card i, #features .container .card i {
   color: #10CAB7;
-  font-size: 3rem;
+  font-size: 3em;
 }
-#features .container .feature h3 {
-  font-size: 1.25rem;
+#services .container .card h3, #features .container .card h3 {
+  font-size: 1.25em;
   text-transform: capitalize;
   font-weight: 700;
   margin-top: 2rem;
 }
-#features .container .feature p.feat-Desc {
-  font-size: 1.1rem;
+#services .container .card p, #features .container .card p {
+  font-size: 1.1em;
   font-weight: 400;
   color: #333;
-  line-height: 1.8rem;
+  line-height: 1.8em;
+}
+
+#services .container {
+  margin-top: 5rem;
+}
+#services .container .col .service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50%;
+  font-size: 85%;
+}
+#services .container .col .service .serv-desc {
+  text-align: left;
+  margin-left: 1.25rem;
+}
+#services .container .col .service h3 {
+  margin-top: 0;
+}
+#services .container .col .img-wrapper {
+  position: relative;
+  width: 275px;
+}
+#services .container .col .img-wrapper::after {
+  position: absolute;
+  content: "";
+  background-color: #2c4755;
+  height: 126%;
+  width: 110px;
+  top: -14%;
+  right: -20%;
+  z-index: -1;
+}
+#services .container .col .img-wrapper img {
+  width: 100%;
 }
 
 @media (max-width: 576px) {
@@ -166,5 +216,10 @@ section {
 
   #landing {
     height: calc(100vh - 43px);
+  }
+}
+@media (max-width: 1200px) {
+  .col:last-child {
+    display: none;
   }
 }/*# sourceMappingURL=template1.css.map */
