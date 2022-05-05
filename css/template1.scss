@@ -56,8 +56,8 @@ header {
                 }
                 span:nth-child(2) {
                     width: 60%;
-                    margin-top: 5px;
-                    margin-bottom: 5px;
+                    margin-top: 7px;
+                    margin-bottom: 7px;
                     transition: width 500ms;
                 }
             }
@@ -193,7 +193,7 @@ section {
         @extend %contnr;
         margin-top: 5rem;
         .col {
-            .service {
+            .card {
                 @include flex-center();
                 align-items: flex-start;
                 height: 50%;
@@ -229,9 +229,39 @@ section {
         }
     }
 }
+#portfolio {
+    .container {
+        @extend %contnr;
+        margin-top: 5rem;
+        gap: 0.5rem;
+        .card {
+            text-align: left;
+            .pic {
+                aspect-ratio: 3/2;
+                background-size: cover;
+            }
+            &:first-child .pic {
+                background-image: url(../images/portfolio-1.jpg);
+            }
+            &:nth-child(2) .pic {
+                background-image: url(../images/portfolio-2.jpg);
+            }
+            &:last-child .pic {
+                background-image: url(../images/portfolio-3.jpg);
+            }
+            .info {
+                padding: $padding-s;
+                h3 {
+                    margin-top: 0;
+                }
+                p {
+                    line-height: 1.5rem;
+                }
+            }
+        }
 
-
-
+    }
+}
 //* Media Queries
 // if not using "clamp" propertie in .container
 // @media (max-width: 1200px) {

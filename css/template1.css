@@ -46,8 +46,8 @@ header .container nav .burger span {
 }
 header .container nav .burger span:nth-child(2) {
   width: 60%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   transition: width 500ms;
 }
 header .container nav:hover span:nth-child(2) {
@@ -139,26 +139,26 @@ section p {
   color: black;
 }
 
-#services .container, #features .container {
+#portfolio .container, #services .container, #features .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
   gap: 3.5rem;
 }
-#services .container .card, #features .container .card {
+#portfolio .container .card, #services .container .card, #features .container .card {
   text-align: center;
   padding: 0.8rem;
 }
-#services .container .card i, #features .container .card i {
+#portfolio .container .card i, #services .container .card i, #features .container .card i {
   color: #10CAB7;
   font-size: 3em;
 }
-#services .container .card h3, #features .container .card h3 {
+#portfolio .container .card h3, #services .container .card h3, #features .container .card h3 {
   font-size: 1.25em;
   text-transform: capitalize;
   font-weight: 700;
   margin-top: 2rem;
 }
-#services .container .card p, #features .container .card p {
+#portfolio .container .card p, #services .container .card p, #features .container .card p {
   font-size: 1.1em;
   font-weight: 400;
   color: #333;
@@ -168,7 +168,7 @@ section p {
 #services .container {
   margin-top: 5rem;
 }
-#services .container .col .service {
+#services .container .col .card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,11 +176,11 @@ section p {
   height: 50%;
   font-size: 85%;
 }
-#services .container .col .service .serv-desc {
+#services .container .col .card .serv-desc {
   text-align: left;
   margin-left: 1.25rem;
 }
-#services .container .col .service h3 {
+#services .container .col .card h3 {
   margin-top: 0;
 }
 #services .container .col .img-wrapper {
@@ -199,6 +199,36 @@ section p {
 }
 #services .container .col .img-wrapper img {
   width: 100%;
+}
+
+#portfolio .container {
+  margin-top: 5rem;
+  gap: 0.5rem;
+}
+#portfolio .container .card {
+  text-align: left;
+}
+#portfolio .container .card .pic {
+  aspect-ratio: 3/2;
+  background-size: cover;
+}
+#portfolio .container .card:first-child .pic {
+  background-image: url(../images/portfolio-1.jpg);
+}
+#portfolio .container .card:nth-child(2) .pic {
+  background-image: url(../images/portfolio-2.jpg);
+}
+#portfolio .container .card:last-child .pic {
+  background-image: url(../images/portfolio-3.jpg);
+}
+#portfolio .container .card .info {
+  padding: 0.8rem;
+}
+#portfolio .container .card .info h3 {
+  margin-top: 0;
+}
+#portfolio .container .card .info p {
+  line-height: 1.5rem;
 }
 
 @media (max-width: 576px) {
