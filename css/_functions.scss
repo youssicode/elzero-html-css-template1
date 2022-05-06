@@ -1,0 +1,52 @@
+//* Sass Functions
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin contnr($minCol) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($minCol, 1fr));
+    gap: $padding-xl;
+    .card {
+        text-align: center;
+        padding: $padding-s;
+        i {
+            color: $main-color;
+            font-size: 3em; // I use "em unit" to reduce "font-size" of all elements (inside Service.card) by & line code
+        }
+        h3 {
+            font-size: 1.25em;
+            text-transform: capitalize;
+            font-weight: 700;
+            margin-top: 2rem;
+        }
+        p {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: $gray-d;
+            line-height: 1.8em;
+        }
+    }
+}
+
+@mixin imgDecor ($height,$top,$left,$clr) {
+    .img-wrapper {
+        position: relative;
+        width: 275px;
+        flex-shrink: 0;
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: $clr;
+            height: $height;
+            width: 110px;
+            top: $top;
+            left: $left;
+            z-index: -1;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
