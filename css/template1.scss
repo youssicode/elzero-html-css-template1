@@ -31,7 +31,6 @@ header.navBar {
         }
         nav {
             position: relative;
-            
             .burger {
                 width: 30px;
                 display: flex;
@@ -53,10 +52,9 @@ header.navBar {
             &:hover span:nth-child(2){
                 width: 100%;
             }
-
             .links-wrapper {
+                display: none; // Displayed on hover
                 position: absolute;
-                display: none;
                 top: 115%;
                 right: 0;
                 li {
@@ -104,7 +102,7 @@ section {
         margin-bottom: 3rem;
         h2 {
             font: {
-                size: 6rem;
+                size: $size-b;
                 weight: 800;
             }
             color: $gray-s;
@@ -112,8 +110,9 @@ section {
             margin-bottom: -30px;
         }
         h2 + p { // la parag. qui suit directement le "h2"
-            font-size: 1.25rem;
+            font-size: $size-l;
             color:$gray-m;
+            margin-top: 0;
         }
     }
 }
@@ -136,13 +135,13 @@ section {
         text-align: center;
     }
     h1.title {
-        font-size: 3rem;
+        font-size: $size-xxl;
         color: $main-color;
         margin-top: 0;
         margin-bottom: .8rem;
     }
     p.we-are {
-        font-size: 1.2rem;
+        font-size: $size-l;
         line-height: 1.8rem;
         color: $black;
     }
@@ -152,7 +151,6 @@ section {
         @include contnr(18.5rem)
     }
 }
-
 #services {
     .container {
         @include contnr(18.5rem);
@@ -162,9 +160,6 @@ section {
                 align-items: flex-start;
                 height: 50%;
                 font-size: 85%; // Will affect i,h3,P
-                // i {
-                //     font-size: 2rem;
-                // }
                 .serv-desc {
                     text-align: left;
                     margin-left: $padding-l;
@@ -240,7 +235,7 @@ section {
         .intro {
             text-align: left;
             p {
-                font-size: 1rem;
+                font-size: $size-m;
                 line-height: 1.8;
             }
             p:first-child {
@@ -259,11 +254,10 @@ section {
         }
     }
 }
-
 #contact {
     .container {
         text-align: center;
-        font-size: 2rem;
+        font-size: $size-xl;
         margin-bottom: 3rem;
         h4 {
             color: $second-color;
@@ -287,7 +281,7 @@ section {
 }
 footer {
     background-color: $second-color;
-    font-size: 1.2rem;
+    font-size: $size-l;
     text-align: center;
     padding: 2rem 0;
     color: #fff;
@@ -298,20 +292,6 @@ footer {
 }
 
 //* Media Queries
-@media (max-width: 576px) {
-    html {
-        font-size: 70%;
-    }
-    .container {
-        width: 95%;
-    }
-    header {
-        padding: $padding-s;
-    }
-    #landing {
-        height: calc(100vh - 43px);
-    }
-}
 @media (max-width: 1200px) {
     #services .col:last-child {
         display: none;
@@ -332,12 +312,17 @@ footer {
         }
     }
 }
-
-// if not using "clamp" propertie in .container
-// @media (max-width: 1200px) {
-//     .container {
-//         max-width: 970px;
-//     }
-// }
-// @media (max-width: 768px) {
-// }
+@media (max-width: 576px) {
+    html {
+        font-size: 70%;
+    }
+    .container {
+        width: 95%;
+    }
+    header {
+        padding: $padding-s;
+    }
+    #landing {
+        height: calc(100vh - 43px);
+    }
+}

@@ -1,12 +1,23 @@
 //*  Variables
 
-$black: black;
-$gray-d: #333;
-$gray-m: #aaa;
-$gray-s: #EBECED;
-$gray-l: #f6f6f6;
-$main-color: #10CAB7;
-$second-color: #2c4755;
-$padding-xl: 3.5rem;
-$padding-l: 1.25rem;
-$padding-s: 0.8rem;
+    // Colors:
+        $black: black;
+        $gray-d: #333;
+        $gray-m: #aaa;
+        $gray-s: #EBECED;
+        $gray-l: #f6f6f6;
+        $main-color: #10CAB7;
+        $second-color: #2c4755;
+
+    // Spaces:
+        $padding-xl: 3.5rem;
+        $padding-l: 1.25rem;
+        $padding-s: 0.8rem;
+
+    // Font sizes:
+        $size-s: 0.8rem;
+        $size-m: 1rem;
+        $size-l: 1.25rem;
+        $size-xl: 2rem;
+        $size-xxl: 3rem;
+        $size-b: 6rem;

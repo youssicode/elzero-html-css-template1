@@ -54,8 +54,8 @@ header.navBar .container nav:hover span:nth-child(2) {
   width: 100%;
 }
 header.navBar .container nav .links-wrapper {
-  position: absolute;
   display: none;
+  position: absolute;
   top: 115%;
   right: 0;
 }
@@ -111,6 +111,7 @@ section header h2 {
 section header h2 + p {
   font-size: 1.25rem;
   color: #aaa;
+  margin-top: 0;
 }
 
 #landing {
@@ -136,7 +137,7 @@ section header h2 + p {
   margin-bottom: 0.8rem;
 }
 #landing p.we-are {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.8rem;
   color: black;
 }
@@ -368,7 +369,7 @@ section header h2 + p {
 
 footer {
   background-color: #2c4755;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   text-align: center;
   padding: 2rem 0;
   color: #fff;
@@ -378,23 +379,6 @@ footer span {
   font-weight: 500;
 }
 
-@media (max-width: 576px) {
-  html {
-    font-size: 70%;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  header {
-    padding: 0.8rem;
-  }
-
-  #landing {
-    height: calc(100vh - 43px);
-  }
-}
 @media (max-width: 1200px) {
   #services .col:last-child {
     display: none;
@@ -411,5 +395,22 @@ footer span {
   }
   #about .container .intro {
     text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 70%;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  header {
+    padding: 0.8rem;
+  }
+
+  #landing {
+    height: calc(100vh - 43px);
   }
 }/*# sourceMappingURL=template1.css.map */
