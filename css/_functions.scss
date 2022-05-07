@@ -31,22 +31,20 @@
 }
 
 @mixin imgDecor ($height,$top,$left,$clr) {
-    .img-wrapper {
-        position: relative;
-        width: 275px;
-        flex-shrink: 0;
-        &::after {
-            position: absolute;
-            content: "";
-            background-color: $clr;
-            height: $height;
-            width: 110px;
-            top: $top;
-            left: $left;
-            z-index: -1;
-        }
-        img {
-            width: 100%;
-        }
+    position: relative;
+    width: 250px;
+    flex-shrink: 0;
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: $clr;
+        height: $height;
+        width: 100px;
+        top: $top;
+        left: $left;
+        z-index: -1;
     }
-}
+    img {
+        width: 100%;
+    }
+ }

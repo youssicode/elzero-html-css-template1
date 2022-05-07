@@ -15,51 +15,51 @@ body {
   margin: 0 auto;
 }
 
-header {
+header.navBar {
   padding: 1.25rem;
   border-bottom: 2px solid #10CAB7;
 }
-header .container {
+header.navBar .container {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
 }
-header .container .logo {
+header.navBar .container .logo {
   height: 24px;
   cursor: pointer;
 }
-header .container nav {
+header.navBar .container nav {
   position: relative;
 }
-header .container nav .burger {
+header.navBar .container nav .burger {
   width: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-header .container nav .burger span {
+header.navBar .container nav .burger span {
   width: 100%;
   height: 2px;
   background-color: black;
   border-radius: 10px;
 }
-header .container nav .burger span:nth-child(2) {
+header.navBar .container nav .burger span:nth-child(2) {
   width: 60%;
   margin-top: 7px;
   margin-bottom: 7px;
   transition: width 500ms;
 }
-header .container nav:hover span:nth-child(2) {
+header.navBar .container nav:hover span:nth-child(2) {
   width: 100%;
 }
-header .container nav .links-wrapper {
+header.navBar .container nav .links-wrapper {
   position: absolute;
   display: none;
   top: 115%;
   right: 0;
 }
-header .container nav .links-wrapper li {
+header.navBar .container nav .links-wrapper li {
   width: 10rem;
   list-style: none;
   background-color: #f6f6f6;
@@ -67,18 +67,18 @@ header .container nav .links-wrapper li {
   cursor: pointer;
   transition: all 500ms;
 }
-header .container nav .links-wrapper li a {
+header.navBar .container nav .links-wrapper li a {
   color: #333;
   text-decoration: none;
   text-transform: capitalize;
 }
-header .container nav .links-wrapper li:hover {
+header.navBar .container nav .links-wrapper li:hover {
   padding-left: 1.25rem;
 }
-header .container nav .links-wrapper li:not(:last-child) {
+header.navBar .container nav .links-wrapper li:not(:last-child) {
   border-bottom: 1px solid #aaa;
 }
-header .container nav .links-wrapper::after {
+header.navBar .container nav .links-wrapper::after {
   content: "";
   position: absolute;
   border: 12px solid transparent;
@@ -86,7 +86,7 @@ header .container nav .links-wrapper::after {
   top: -24px;
   right: 6px;
 }
-header .container nav:hover .links-wrapper {
+header.navBar .container nav:hover .links-wrapper {
   display: block;
 }
 
@@ -96,19 +96,21 @@ section:nth-child(2n+1) {
 
 section {
   padding: 3.5rem 0;
-  text-align: center;
 }
-section h2 {
+section header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+section header h2 {
   font-size: 6rem;
   font-weight: 800;
   color: #EBECED;
   margin-top: 0;
   margin-bottom: -30px;
 }
-section h2 + p {
+section header h2 + p {
   font-size: 1.25rem;
   color: #aaa;
-  margin: 0 0 5rem;
 }
 
 #landing {
@@ -207,7 +209,7 @@ section h2 + p {
 }
 #services .container .col .img-wrapper {
   position: relative;
-  width: 275px;
+  width: 250px;
   flex-shrink: 0;
 }
 #services .container .col .img-wrapper::after {
@@ -215,7 +217,7 @@ section h2 + p {
   content: "";
   background-color: #2c4755;
   height: 126%;
-  width: 110px;
+  width: 100px;
   top: -14%;
   left: 75%;
   z-index: -1;
@@ -281,29 +283,49 @@ section h2 + p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 13rem;
 }
 #about .container .img-wrapper {
   position: relative;
-  width: 275px;
+  width: 250px;
   flex-shrink: 0;
 }
 #about .container .img-wrapper::after {
   position: absolute;
   content: "";
   background-color: #EBECED;
-  height: 114%;
-  width: 110px;
-  top: -8%;
+  height: 116%;
+  width: 100px;
+  top: -10%;
   left: -8%;
   z-index: -1;
 }
 #about .container .img-wrapper img {
   width: 100%;
 }
+#about .container .img-wrapper span, #about .container .img-wrapper span::before {
+  position: absolute;
+  content: "";
+  background-color: #10CAB7;
+  z-index: -1;
+}
+#about .container .img-wrapper span {
+  height: 100%;
+  width: 80px;
+  top: -10%;
+  left: 82%;
+}
+#about .container .img-wrapper span::before {
+  height: 22%;
+  width: 115%;
+  bottom: 0;
+  left: 100%;
+}
+#about .container .intro {
+  text-align: left;
+}
 #about .container .intro p {
   font-size: 1rem;
-  text-align: left;
   line-height: 1.8;
 }
 #about .container .intro p:first-child {
@@ -311,11 +333,49 @@ section h2 + p {
   font-weight: 700;
 }
 #about .container .intro hr {
+  display: inline-block;
   background-color: #10CAB7;
   width: 50%;
   height: 3px;
   border: none;
-  margin: 40px auto 30px 0;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#contact .container {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+#contact .container h4 {
+  color: #2c4755;
+  margin-bottom: 1rem;
+}
+#contact .container a {
+  color: #10CAB7;
+  text-decoration: none;
+  font-weight: 600;
+}
+#contact .container a:hover {
+  color: #2c4755;
+}
+#contact .container p {
+  font-size: 1.2rem;
+}
+#contact .container p a {
+  margin-left: 1rem;
+}
+
+footer {
+  background-color: #2c4755;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem 0;
+  color: #fff;
+}
+footer span {
+  color: #10CAB7;
+  font-weight: 500;
 }
 
 @media (max-width: 576px) {
@@ -324,7 +384,7 @@ section h2 + p {
   }
 
   .container {
-    width: 100%;
+    width: 95%;
   }
 
   header {
@@ -343,8 +403,13 @@ section h2 + p {
 @media (max-width: 992px) {
   #about .container {
     flex-direction: column;
+    gap: 3rem;
   }
-  #about .container .intro p {
+  #about .container .img-wrapper::after,
+#about .container span {
+    display: none;
+  }
+  #about .container .intro {
     text-align: center;
   }
 }/*# sourceMappingURL=template1.css.map */
